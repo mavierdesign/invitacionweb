@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raul & Jimena</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Raul & Jimena</h1>
+        <p>20 de Septiembre de 2025</p>
+        <div id="countdown" class="countdown"></div>
+        <a href="#evento" class="boton-scroll">Ver invitación</a>
+      </div>
+      
+  </section>
+
+  <section class="evento" id="evento">
+    <h2>¡Nos encantaría que nos acompañes!</h2>
+    <p><strong>📍 Lugar:</strong> Jardín Las Rosas, Ciudad de México</p>
+    <p><strong>🕕 Hora:</strong> 6:00 PM</p>
+  
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.002789532428!2d-99.133208!3d19.432607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92e5f4e7a5d%3A0xe5cfd5433caa6905!2sCiudad%20de%20México!5e0!3m2!1ses!2smx!4v1619999999999"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+  
+
+  <section class="historia">
+    <h2>Nuestra Historia</h2>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="circle"></div>
+        <div class="content">
+          <h3>Nos conocimos</h3>
+          <p>En 2018, nos cruzamos por primera vez en un café en la ciudad. Desde ese momento, sabíamos que nuestras vidas cambiarían para siempre.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item fade-in" >
+        <div class="circle"></div>
+        <div class="content">
+          <h3>El primer viaje</h3>
+          <p>En 2019, decidimos irnos de viaje a la playa. Fue un momento inolvidable donde creamos recuerdos que aún atesoramos.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item fade-in">
+        <div class="circle"></div>
+        <div class="content">
+          <h3>El compromiso</h3>
+          <p>En 2023, durante un paseo por las montañas, uno de nosotros sorprendió al otro con una propuesta de matrimonio que marcaría el inicio de nuestra nueva aventura juntos.</p>
+        </div>
+      </div>
+  
+      <div class="timeline-item fade-in">
+        <div class="circle"></div>
+        <div class="content">
+          <h3>La boda</h3>
+          <p>Finalmente, en 2025, celebramos el día más esperado de nuestras vidas con todos nuestros seres queridos. ¡Nos casamos!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="galeria">
+    <h2>Nuestros Momentos</h2>
+    <div class="galeria-grid">
+      
+      <div class="foto">
+        <img src="imagenes/imagen1.jpg" alt="Foto 1">
+        <p class="frase">Nuestro primer día como esposos</p>
+      </div>
+  
+      <div class="foto">
+        <img src="imagenes/imagen2.jpeg" alt="Foto 2">
+        <p class="frase">Un día lleno de sonrisas</p>
+      </div>
+  
+      <div class="foto">
+        <img src="imagenes/imagen3.jpg" alt="Foto 3">
+        <p class="frase">Celebrando nuestro compromiso</p>
+      </div>
+  
+      <div class="foto">
+        <img src="imagenes/imagen4.jpg" alt="Foto 4">
+        <p class="frase">Momentos que nos unen</p>
+      </div>
+  
+    </div>
+  </section>
+
+  <section class="rsvp">
+    <h2>Confirma tu asistencia</h2>
+    <form id="rsvp-form">
+      <label for="nombre">Nombre completo*</label>
+      <input type="text" id="nombre" name="nombre" required>
+  
+      <label for="acompanantes">Número de acompañantes</label>
+      <input type="number" id="acompanantes" name="acompanantes" min="0" max="10">
+  
+      <label for="asistencia">¿Asistirás?</label>
+      <select id="asistencia" name="asistencia" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+      </select>
+  
+      <label for="comentario">Comentario (opcional)</label>
+      <textarea id="comentario" name="comentario" rows="3"></textarea>
+  
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>“El amor no mira con los ojos, sino con el alma.”</p>
+    <p>Gracias por ser parte de nuestro día especial ❤️</p>
+  </footer>
+  
+
+  <script>
+    document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('¡Gracias por confirmar tu asistencia! ❤️');
+      this.reset(); // Limpia el formulario
+    });
+  </script>
+
+  <script>
+    // Cuenta regresiva
+    const countdownElement = document.getElementById('countdown');
+    const targetDate = new Date('2025-09-20T18:00:00').getTime();
+  
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+  
+      if (distance <= 0) {
+        countdownElement.innerHTML = '¡Ya llegó el gran día!';
+        return;
+      }
+  
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      countdownElement.innerHTML = 
+        `Faltan ${days} días, ${hours}h ${minutes}m ${seconds}s`;
+    }
+  
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+  
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+  
+    const appearOptions = {
+      threshold: 0.2
+    };
+  
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+  
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+  
+  
+</body>
+</html>
