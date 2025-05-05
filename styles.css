@@ -392,5 +392,65 @@ body, html {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
   
-  
+/*-----------------Personas-------------*/
+.familia-personas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.persona {
+  text-align: center;
+  max-width: 180px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.persona img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;         /* Recorta de forma uniforme */
+  border-radius: 50%;        /* Redondeado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 3px solid #eee;
+  transition: transform 0.3s;
+}
+
+.persona img:hover {
+  transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+.persona p {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.persona span {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.1rem;
+  color: #a17c5d;
+  margin-top: 0.2rem;
+}
+
+-persona h1, h2, h3 {
+  text-align: center;
+  font-family: 'Great Vibes', cursive; /* Puedes usar otra si prefieres */
+  margin-bottom: 1rem;
+  color: #3a2c2c;
+}
+
+.persona h2 {
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+.persona h3 {
+  font-size: 3.5rem;
+  font-weight: normal;
+}
+
+
   
